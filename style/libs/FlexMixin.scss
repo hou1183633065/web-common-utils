@@ -1,0 +1,55 @@
+/*
+.flex1~.flex10
+*/
+
+$flex: 10;
+@while $flex>0 {
+    .flex-#{$flex} {
+        flex: $flex;
+    }
+    $flex: $flex - 1;
+}
+
+
+/*
+display类生成
+*/
+
+$display: (flex, block, none, inline, inline-block);
+@each $attr in $display {
+    .#{$attr} {
+        display: $attr;
+    }
+}
+
+
+/*
+flex布局
+row, row-reverse, column, column-reverse
+*/
+
+$flex-direction: (row, row-reverse, column, column-reverse);
+@each $item in $flex-direction {
+    .#{$item} {
+        flex-direction: $item;
+    }
+}
+
+$justify-content: (justify-start: flex-start, justify-end: flex-end, justify-around: space-around, justify-between: space-between, justify-center: center);
+@each $item in map-keys($justify-content) {
+    .#{$item} {
+        justify-content: map-get($justify-content, $item);
+    }
+}
+
+$align-items: (align-start: flex-start, align-end: flex-end, align-around: space-around, align-between: space-between, align-center: center);
+@each $item in map-keys($align-items) {
+    .#{$item} {
+        align-items: map-get($align-items, $item);
+    }
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}

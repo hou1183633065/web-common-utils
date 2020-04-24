@@ -1,0 +1,20 @@
+/*
+.text-ellipsis~.text-ellipsis-line8
+*/
+
+@mixin text-ellipsis($max-line:1) {
+    .text-ellipsis {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @while $max-line>1 {
+            &-line#{$max-line} {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: $max-line;
+            }
+            $max-line: $max-line - 1;
+        }
+    }
+}

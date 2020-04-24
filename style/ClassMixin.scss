@@ -1,0 +1,15 @@
+// @import './Reset.scss';
+// @import './libs//ColorMixin.scss';
+// $colors: (red: red, yellow:yellow, black:black, white:white, fff:#fff);
+// @include each-colors($colors);
+// @import './libs/FontWeightMixin.scss';
+// @import './libs/FontSizeMixin.scss';
+// @include each-font-size(30);
+// @import './libs/ContentMixin.scss';
+// @import './libs/FlexMixin.scss';
+// @import './libs/FontMixin.scss';
+// @import './libs/TextEllipsMixin.scss';
+// @include text-ellipsis(5);
+// @import './libs/BorderMixin.scss';
+// @include each-hr(5, red)
+@import './libs/TriangleMixin.scss';

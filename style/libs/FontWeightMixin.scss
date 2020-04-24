@@ -1,0 +1,27 @@
+/*
+.weight900~.weight100/.weight/.weight-normal
+*/
+
+@mixin font-smooting($value) {
+    -webkit-font-smoothing: $value;
+}
+
+.weight {
+    font-weight: bold;
+    @include font-smooting(subpixel-antialiased)
+}
+
+.weight-normal {
+    font-weight: normal;
+}
+
+$weight: 9;
+@while $weight>0 {
+    .weight-#{$weight*100} {
+        font-weight: 100*$weight;
+        @if $weight>=7 {
+            @include font-smooting(subpixel-antialiased)
+        }
+    }
+    $weight: $weight - 1;
+}

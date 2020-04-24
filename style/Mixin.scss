@@ -1,0 +1,311 @@
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+  }
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+  }
+}
+@mixin font-dpr-line($font-size){
+  font-size: $font-size;
+  line-height: $font-size;
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+    line-height: $font-size * 2;
+  }
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+    line-height: $font-size * 3;
+  }
+}
+
+@mixin transform-style($left, $top) {
+	transform: translate($left, $top);
+	[data-dpr="2"] & {
+    	transform: translate($left * 0.5, $top * 0.5);
+    }
+    [data-dpr="3"] & {
+    	transform: translate($left * 0.8, $top * 0.8);
+    }
+}
+
+@mixin android-style-after($height, $width, $top, $left) {
+	height: $height;
+	width: $width;
+	top: $top;
+	left: $left;
+	[data-dpr="1"] & {
+		top: $top;
+		left: $left;
+	}
+}
+
+@mixin padding-static($top, $right, $bottom, $left) {
+	padding: $top * 1.5 $right *1.5 $bottom *1.5$left *1.5;
+	[data-dpr="2"] & {
+    	padding: $top $right $bottom $left;
+    }
+    [data-dpr="3"] & {
+    	padding: $top $right $bottom $left;
+    }
+}
+
+@mixin android-style-before($height, $top, $left) {
+	height: $height;
+	top: $top;
+	left: $left;
+	[data-dpr="1"] & {
+		top: $top;
+		left: $left;
+	}
+}
+
+@mixin border-style-two($width, $style, $color) {
+    border: $width $style $color;
+    [data-dpr="1"] & {
+        border: $width $style $color;
+    }
+    [data-dpr="2"] & {
+        border: $width * 2 $style $color;
+    }
+    [data-dpr="3"] & {
+        border: $width $style $color;
+    }
+    [data-dpr="3.5"] & {
+        border-bottom: $width $style $color;
+    }
+    [data-dpr="2.5"] & {
+        border-bottom: $width $style $color;
+    }
+}
+
+@mixin border-style($width, $style, $color) {
+    border: $width $style $color;
+    [data-dpr="1"] & {
+        border: $width $style $color;
+    }
+	border: $width $style $color;
+	[data-dpr="2"] & {
+    	border: $width * 2 $style $color;
+    }
+    [data-dpr="3"] & {
+    	border: $width $style $color;
+    }
+}
+
+@mixin border-top-style($width, $style, $color) {
+	border-top: $width $style $color;
+	[data-dpr="2"] & {
+    	border-top: $width * 2 $style $color;
+    }
+    [data-dpr="3"] & {
+    	border-top: $width * 3 $style $color;
+    }
+}
+@mixin border-right-style($width, $style, $color) {
+	border-right: $width $style $color;
+	[data-dpr="2"] & {
+    	border-right: $width * 2 $style $color;
+    }
+    [data-dpr="3"] & {
+    	border-right: $width * 3 $style $color;
+    }
+}
+@mixin border-bottom-style($width, $style, $color) {
+    border-bottom: $width $style $color;
+    [data-dpr="1"] & {
+        border-bottom: $width $style $color;
+    }
+	[data-dpr="2"] & {
+    	border-bottom: $width * 2 $style $color;
+    }
+    [data-dpr="3"] & {
+    	border-bottom: $width $style $color;
+    }
+    [data-dpr="3.5"] & {
+        border-bottom: $width $style $color;
+    }
+    [data-dpr="2.5"] & {
+        border-bottom: $width $style $color;
+    }
+}
+@mixin border-left-style($width, $style, $color) {
+	border-left: $width $style $color;
+	[data-dpr="2"] & {
+    	border-left: $width * 2 $style $color;
+    }
+    [data-dpr="3"] & {
+    	border-left: $width * 3 $style $color;
+    }
+}
+
+@mixin display-flex-row($direction: default,$justify: center, $align: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin arrow-static($rorate) {
+	width: 0.266667rem;
+	height: 0.266667rem;
+	border-right: 0.04rem solid #B8BECC;
+	border-bottom: 0.04rem solid #B8BECC;
+	-webkit-transform: rotate($rorate);
+	-o-transform: rotate($rorate);
+	-moz-transform: rotate($rorate);
+	-ms-transform: rotate($rorate);
+	transform: rotate($rorate);
+}
+
+@mixin background-gariden($startColor, $endColor) {
+    background: -moz-linear-gradient(to right, $startColor 0%, $endColor 100%);
+    background: -webkit-linear-gradient(to right, $startColor 0%, $endColor 100%);
+    background: -o-linear-gradient(to right, $startColor 0%, $endColor 100%);
+    background: -ms-linear-gradient(to right, $startColor 0%, $endColor 100%);
+    background: linear-gradient(to right, $startColor 0%, $endColor 100%);
+}
+
+
+@mixin overflow-hidden($row) {
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $row;
+	line-clamp: $row;
+	-webkit-box-orient: vertical;
+    word-wrap:break-word;
+    white-space:normal;
+    word-break:break-all;
+}
+
+@mixin reduce-style($color) {
+    //减号
+    .minus-icon {
+        display: inline-block;
+        background: $color;
+        height: 0.24rem;
+        position: relative;
+        width: 0.02rem;
+        transform: rotateZ(90deg);
+        text-align: center;
+        line-height: 0.266667rem;
+    }
+}
+@mixin add-style($color) {
+	//加号
+    .plus-icon {
+        display: inline-block;
+        background: $color;
+        height: 0.24rem;
+        position: relative;
+        width: 0.04rem;
+    }
+    .plus-icon:after {
+        background: $color;
+        content: "";
+        height: 0.24rem;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 0.04rem;
+        transform: rotateZ(90deg)
+    }
+}
+@mixin animation-static($animatin-name, $time) {
+    animation: $animatin-name $time forwards;
+    -moz-animation: $animatin-name $time forwards;  /* Firefox */
+    -webkit-animation: $animatin-name $time forwards;   /* Safari 和 Chrome */
+    -o-animation: $animatin-name $time forwards;    /* Opera */
+}
+//显示动画
+@keyframes showEleAnimation
+{
+	from {bottom: -1.306667;}
+	to {bottom: 0;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+	from {bottom: -1.306667;}
+	to {bottom: 0;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+	from {bottom: -1.306667;}
+	to {bottom: 0;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+	from {bottom: -1.306667;}
+	to {bottom: 0;}
+}
+//隐藏动画
+@keyframes hiddenEleAnimation {
+	from {bottom: 0;}
+	to {bottom: -1.306667;}
+}
+@-moz-keyframes hiddenEleAnimation {
+	from {bottom: 0;}
+	to {bottom: -1.306667;}
+}
+@-webkit-keyframes hiddenEleAnimation {
+	from {bottom: 0;}
+	to {bottom: -1.306667;}
+}
+@-o-keyframes hiddenEleAnimation {
+	from {bottom: 0;}
+	to {bottom: -1.306667;}
+}
+
+//top位移动画
+@keyframes hiddenTip {
+    from {
+        top: 0.266667rem;
+    }
+    to {
+        top: -1.733333rem;
+    }
+}
+@-moz-keyframes hiddenTip {
+    from {
+        top: 0.266667rem;
+    }
+    to {
+        top: -1.733333rem;
+    }
+}
+@-webkit-keyframes hiddenTip {
+    from {
+        top: 0.266667rem;
+    }
+    to {
+        top:  -1.733333rem;
+    }
+}
+@-o-keyframes hiddenTip {
+    from {
+        top: 0.266667rem;
+    }
+    to {
+        top: -1.733333rem;
+    }
+}
+
+//padding位移动画
+@keyframes paddingChange {
+    from {
+        padding-top: 1.733333rem;
+    }
+    to {
+        padding-top: 0.266667rem;
+    }
+}
+
+
+
+

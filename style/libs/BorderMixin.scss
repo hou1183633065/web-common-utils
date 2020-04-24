@@ -1,0 +1,43 @@
+/*
+.hr.hr__1~.hr__8
+*/
+
+@mixin each-hr($max:1, $color:white) {
+    @while $max>0 {
+        .hr__#{$max} {
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: $max*1px;
+                background-color: $color;
+            }
+        }
+        $max: $max - 1;
+    }
+}
+
+@mixin border($w, $type, $color) {
+    .border-#{$w} {
+        border: $w*1px $type $color;
+    }
+    .border-top-#{$w} {
+        border-top: $w*1px $type $color;
+    }
+    .border-bottom-#{$w} {
+        border-bottom: $w*1px $type $color;
+    }
+    .border-left-#{$w} {
+        border-left: $w*1px $type $color;
+    }
+    .border-right-#{$w} {
+        border-right: $w*1px $type $color;
+    }
+}
+
+@mixin each-border($max:1, $type: solid, $color:white) {
+    @while $max>0 {
+        @include border($max, $type, $color);
+        $max: $max - 1;
+    }
+}

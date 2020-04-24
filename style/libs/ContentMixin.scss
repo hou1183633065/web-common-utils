@@ -1,0 +1,58 @@
+/*
+.mt-5~.mt-50
+.mb-5~.mt-50
+.ml-5~.mt-50
+.mr-5~.mt-50
+.mlr-5~.mlr-50
+.pt-5~.pt-50
+.pb-5~.pt-50
+.pl-5~.pt-50
+.pr-5~.pt-50
+.plr-5~.plr-50
+.ptb-5~.ptb-50
+.padding-5~.padding-50
+*/
+
+$length: 50;
+@while $length>0 {
+    .mt-#{$length} {
+        margin-top: 1px*$length;
+    }
+    .mb-#{$length} {
+        margin-bottom: 1px*$length;
+    }
+    .ml-#{$length} {
+        margin-left: 1px*$length;
+    }
+    .mr-#{$length} {
+        margin-right: 1px*$length;
+    }
+    .mtb-#{$length} {
+        margin: 1px*$length auto;
+    }
+    .pt-#{$length} {
+        padding-top: 1px*$length;
+    }
+    .pb-#{$length} {
+        padding-bottom: 1px*$length;
+    }
+    .pl-#{$length} {
+        padding-left: 1px*$length;
+    }
+    .pr-#{$length} {
+        padding-right: 1px*$length;
+    }
+    .ptb-#{$length} {
+        box-sizing: border-box;
+        padding: 1px*$length 0;
+    }
+    .plr-#{$length} {
+        box-sizing: border-box;
+        padding: 0 1px*$length;
+    }
+    .padding-#{$length} {
+        box-sizing: border-box;
+        padding: 1px*$length;
+    }
+    $length: $length - 5;
+}

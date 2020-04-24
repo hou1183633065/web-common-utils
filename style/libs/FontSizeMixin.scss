@@ -1,0 +1,12 @@
+/*
+生成.fs-$min到.fs-$max，步长为$step
+*/
+
+@mixin each-font-size($max, $min:10, $step:1) {
+    @while $max>=$min {
+        .fs-#{$max} {
+            font-size: 1px*$max;
+        }
+        $max: $max - $step;
+    }
+}
