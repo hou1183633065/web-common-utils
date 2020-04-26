@@ -5,7 +5,6 @@
  * @returns {string} 中文大写的金额, 标准会计格式
  * @runkit true
  * @example
- * const tozhCN = require('zan-utils/money/tozhCN');
  * tozhCN(500.3);
  * // => 伍佰元叁角整
  */
