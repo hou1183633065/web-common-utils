@@ -4,7 +4,10 @@ import device from './device';
 import date from './date';
 import data from './data';
 import others from './others';
-import dom from './dom';
+import dom from './random';
+import cookie from './cookie';
+import object from './object';
+import url from './url'
 export default {
     money,
     string,
@@ -13,4 +16,7 @@ export default {
     data,
     others,
     dom,
+    cookie,
+    object,
+    url
 };
