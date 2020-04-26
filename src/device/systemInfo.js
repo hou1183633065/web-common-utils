@@ -1,11 +1,11 @@
-/** 
- * @for 浏览器系统信息
- */
 
+/** 浏览器信息转为小写 */
 const UA = navigator.userAgent.toLowerCase();
 
+/** 校验浏览器信息UA是否含有某些字段 */
 const test_UA = regexp => regexp.test(UA);
 
+/** 根据正则获取版本号 */
 const getVersion = regexp =>
     (UA.match(regexp) + "").replace(/[^0-9|_.]/gi, "").replace(/_/gi, ".");
 
@@ -147,7 +147,7 @@ if (test_UA(/micromessenger/gi)) {
     shell_v = getVersion(/bidubrowser [\d.]+/gi);
 }
 
-export default {
+export {
     system,
     system_v,
     platform,

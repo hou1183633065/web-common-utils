@@ -1,4 +1,4 @@
-import * as systemInfo from 'systemInfo'
+import * as systemInfo from './systemInfo'
 export default {
     systemInfo
 }
